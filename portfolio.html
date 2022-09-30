@@ -16,7 +16,7 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="container">
+      <div class="container page-header__container">
         <div class="logo-nav">
           <a class="log" href="./index.html"
             ><span class="logo">Web</span
@@ -25,18 +25,23 @@
           <nav class="page-navigation">
             <ul class="menu">
               <li>
-                <a class="menu__link-studio " href="./index.html"
-                  >Студія</a
-                >
+                <a class="menu__link-studio" href="./index.html">Студія</a>
               </li>
               <li>
-                <a class="menu__link currentLink" href="./portfolio.html">Портфоліо</a>
+                <a class="menu__link currentLink" href="./portfolio.html"
+                  >Портфоліо</a
+                >
               </li>
               <li><a class="menu__link" href="#">Контакти</a></li>
             </ul>
           </nav>
         </div>
-        <ul class="menu">
+        <button type="button" class="open-mobile-menu-btn" data-menu-open>
+          <svg class="open-mobile-menu-btn__icon">
+            <use href="./images/sprite.svg#icon-burger"></use>
+          </svg>
+        </button>
+        <ul class="menu page-header__ul-contact">
           <li>
             <a class="menu__link-contact" href="mailto:info@devstudio.com"
               ><svg class="page-header-email">
@@ -54,6 +59,65 @@
             >
           </li>
         </ul>
+      </div>
+      <div class="mobile-menu" data-menu>
+        <div class="container mobile-menu__container">
+          <button class="mobile-menu__close-btn" data-menu-close>
+            <svg class="mobile-menu__close-icon">
+              <use href="./images/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <ul class="mobile-menu__ul-nav">
+            <li class="mobile-menu__list">
+              <a class="mobile-menu__link-nav" href="./index.html">Студія</a>
+            </li>
+            <li class="mobile-menu__list">
+              <a
+                class="mobile-menu__link-nav currentLink"
+                href="./portfolio.html"
+                >Портфоліо</a
+              >
+            </li>
+            <li class="mobile-menu__list">
+              <a class="mobile-menu__link-nav" href="#">Контакти</a>
+            </li>
+          </ul>
+          <ul class="mobile-menu__ul-contact">
+            <li class="mobile-menu__list-contact">
+              <a
+                class="mobile-menu__link-contact-email"
+                href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="mobile-menu__list-contact">
+              <a
+                class="mobile-menu__link-contact-tell"
+                href="tel:+380961111111"
+              >
+                +38 096 111 11 11</a
+              >
+            </li>
+          </ul>
+          <ul class="mobile-menu__ul-social">
+            <li class="mobile-menu__list-social">
+              <a
+                class="mobile-menu__link-social mobile-menu__social-first"
+                href="#"
+              ></a
+              >Instagram
+            </li>
+            <li class="mobile-menu__list-social">
+              <a class="mobile-menu__link-social" href="#"></a>Twitter
+            </li>
+            <li class="mobile-menu__list-social">
+              <a class="mobile-menu__link-social" href="#"></a>Facebook
+            </li>
+            <li class="mobile-menu__list-social">
+              <a class="mobile-menu__link-social" href="#"></a>LinkedIn
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
@@ -89,12 +153,58 @@
             <li class="wall">
               <a href="" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio1.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio1.webp 1x,
+                        ./images/wall1@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio1.jpg 1x,
+                        ./images/wall1@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall1-tablet.webp    1x,
+                        ./images/tablet/wall1-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall1-tablet.jpg    1x,
+                        ./images/tablet/wall1-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall1-mobile.webp    1x,
+                        ./images/mobile/wall1-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall1-mobile.jpg    1x,
+                        ./images/mobile/wall1-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio1.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -110,12 +220,58 @@
             <li class="wall">
               <a href="#" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio2.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio2.webp 1x,
+                        ./images/wall2@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio2.jpg 1x,
+                        ./images/wall2@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall2-tablet.webp    1x,
+                        ./images/tablet/wall2-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall2-tablet.jpg    1x,
+                        ./images/tablet/wall2-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall2-mobile.webp    1x,
+                        ./images/mobile/wall2-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall2-mobile.jpg    1x,
+                        ./images/mobile/wall2-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio2.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -131,12 +287,58 @@
             <li class="wall">
               <a href="#" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio3.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio3.webp 1x,
+                        ./images/wall3@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio3.jpg 1x,
+                        ./images/wall3@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall3-tablet.webp    1x,
+                        ./images/tablet/wall3-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall3-tablet.jpg    1x,
+                        ./images/tablet/wall3-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall3-mobile.webp    1x,
+                        ./images/mobile/wall3-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall3-mobile.jpg    1x,
+                        ./images/mobile/wall3-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio3.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -152,12 +354,58 @@
             <li class="wall">
               <a href="#" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio4.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio4.webp 1x,
+                        ./images/wall4@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio4.jpg 1x,
+                        ./images/wall4@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall4-tablet.webp    1x,
+                        ./images/tablet/wall4-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall4-tablet.jpg    1x,
+                        ./images/tablet/wall4-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall4-mobile.webp    1x,
+                        ./images/mobile/wall4-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall4-mobile.jpg    1x,
+                        ./images/mobile/wall4-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio4.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -173,12 +421,58 @@
             <li class="wall">
               <a href="#" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio5.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio5.webp 1x,
+                        ./images/wall5@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio5.jpg 1x,
+                        ./images/wall5@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall5-tablet.webp    1x,
+                        ./images/tablet/wall5-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall5-tablet.jpg    1x,
+                        ./images/tablet/wall5-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall5-mobile.webp    1x,
+                        ./images/mobile/wall5-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall5-mobile.jpg    1x,
+                        ./images/mobile/wall5-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio5.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -194,12 +488,58 @@
             <li class="wall">
               <a href="#" class="wall-img">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio6.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio6.webp 1x,
+                        ./images/wall6@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio6.jpg 1x,
+                        ./images/wall6@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall6-tablet.webp    1x,
+                        ./images/tablet/wall6-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall6-tablet.jpg    1x,
+                        ./images/tablet/wall6-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall6-mobile.webp    1x,
+                        ./images/mobile/wall6-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall6-mobile.jpg    1x,
+                        ./images/mobile/wall6-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio6.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -215,12 +555,58 @@
             <li class="wall">
               <a class="wall-img" href="#">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio7.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio7.webp 1x,
+                        ./images/wall7@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio7.jpg 1x,
+                        ./images/wall7@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall7-tablet.webp    1x,
+                        ./images/tablet/wall7-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall7-tablet.jpg    1x,
+                        ./images/tablet/wall7-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall7-mobile.webp    1x,
+                        ./images/mobile/wall7-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall7-mobile.jpg    1x,
+                        ./images/mobile/wall7-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio7.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -236,12 +622,58 @@
             <li class="wall">
               <a class="wall-img" href="#">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio8.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio8.webp 1x,
+                        ./images/wall8@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio8.jpg 1x,
+                        ./images/wall8@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall8-tablet.webp    1x,
+                        ./images/tablet/wall8-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall8-tablet.jpg    1x,
+                        ./images/tablet/wall8-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall8-mobile.webp    1x,
+                        ./images/mobile/wall8-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall8-mobile.jpg    1x,
+                        ./images/mobile/wall8-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio8.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -257,12 +689,58 @@
             <li class="wall">
               <a class="wall-img" href="#">
                 <div class="wall-img-overlay">
-                  <img
-                    src="./images/portfolio9.jpg"
-                    alt="WebSite"
-                    width="370"
-                    height="295"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio9.webp 1x,
+                        ./images/wall9@2x.webp   2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio9.jpg 1x,
+                        ./images/wall9@2x.jpg   2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall9-tablet.webp    1x,
+                        ./images/tablet/wall9-tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/tablet/wall9-tablet.jpg    1x,
+                        ./images/tablet/wall9-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall9-mobile.webp    1x,
+                        ./images/mobile/wall9-mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/mobile/wall9-mobile.jpg    1x,
+                        ./images/mobile/wall9-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img
+                      class="wall__img"
+                      src="./images/portfolio9.jpg"
+                      alt="WebSite"
+                    />
+                  </picture>
                   <p class="overlay">
                     Ресурс пропонує комплексні пропозиції з різним рівнем
                     функціоналу та сервісів. Все це дозволить відвідувачу
@@ -281,7 +759,7 @@
     </main>
     <footer class="page-footer">
       <div class="container">
-        <div>
+        <div class="page-footer__container-logo">
           <a class="log" href="./index.html"
             ><span class="logo">Web</span
             ><span class="logo-two">Studio</span></a
@@ -289,7 +767,9 @@
           <address class="page-addres">
             <ul class="page-addres__ul">
               <li>
-                <a class="page-addres__ul__link" href="#">м. Київ, пр-т Лесі Українки, 26</a>
+                <a class="page-addres__ul__link" href="#"
+                  >м. Київ, пр-т Лесі Українки, 26</a
+                >
               </li>
               <li>
                 <a class="menu-contact-footer" href="mailto:info@devstudio.com"
@@ -359,4 +839,6 @@
       </div>
     </footer>
   </body>
+
+  <script src="./js/menu.js"></script>
 </html>

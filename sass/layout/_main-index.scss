@@ -737,6 +737,8 @@
     align-items: center;
     column-gap: 30px;
     margin-bottom: 0;
+    flex-wrap: nowrap;
+    width: auto;
   }
 
   .icon-client-item {

@@ -24,6 +24,10 @@
     position: relative;
     padding-left: 40px;
     padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   .mobile-menu__close-btn {
@@ -65,9 +69,6 @@
     color: var(--color-logo);
   }
 
-  .mobile-menu__ul-contact {
-    padding-top: 302px;
-  }
 
   .mobile-menu__list-contact {
     margin-bottom: 32px;
@@ -119,6 +120,10 @@
   .mobile-menu__social-first {
     margin: 0;
     border: none;
+  }
+
+  .mobile__contact-social {
+    padding-bottom: 48px;
   }
 }
 

@@ -402,6 +402,10 @@ section {
     position: relative;
     padding-left: 40px;
     padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
   .mobile-menu__close-btn {
     position: absolute;
@@ -435,9 +439,6 @@ section {
   }
   .currentLink {
     color: var(--color-logo);
-  }
-  .mobile-menu__ul-contact {
-    padding-top: 302px;
   }
   .mobile-menu__list-contact {
     margin-bottom: 32px;
@@ -484,6 +485,9 @@ section {
     margin: 0;
     border: none;
   }
+  .mobile__contact-social {
+    padding-bottom: 48px;
+  }
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -493,6 +497,9 @@ section {
 @media screen and (max-width: 767px) {
   header .menu {
     display: none;
+  }
+  header {
+    border-bottom: 1px solid #ececec;
   }
   .open-mobile-menu-btn {
     border: none;
@@ -510,6 +517,8 @@ section {
   align-items: center;
   justify-content: space-between;
   margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1351,7 +1360,7 @@ section {
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
   .chapter-head {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/mobile/tablet-img@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/tablet/tablet-img@2x.jpg);
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px), screen and (min-resolution: 2dppx) and (min-width: 1200px) {
@@ -1370,16 +1379,6 @@ section {
   }
   .currentLink {
     color: var(--color-logo);
-  }
-  .currentLink::after {
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: var(--color-logo);
-    border-radius: 2px;
-    position: absolute;
-    bottom: 0;
-    content: "";
   }
   .menu-btn {
     background: var(--color-main2);
@@ -1807,6 +1806,7 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
   }
   .subscription-form__text {
     font-family: "Roboto";
@@ -1825,7 +1825,7 @@ section {
     margin-bottom: 20px;
   }
   .subscription-footer__input {
-    width: 450px;
+    width: 100%;
     height: 50px;
     padding-left: 16px;
     padding-top: 15px;
@@ -2117,6 +2117,10 @@ section {
   }
   .subscription-form {
     margin-left: auto;
+    display: block;
+  }
+  .page-addres__ul > li:last-child {
+    margin-bottom: 0;
   }
   .subscription-form__text {
     font-family: "Roboto";

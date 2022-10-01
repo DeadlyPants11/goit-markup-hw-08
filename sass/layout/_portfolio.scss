@@ -10,17 +10,6 @@
 
   .currentLink {
     color: var(--color-logo);
-
-    &::after {
-      display: block;
-      width: 100%;
-      height: 4px;
-      background: var(--color-logo);
-      border-radius: 2px;
-      position: absolute;
-      bottom: 0;
-      content: "";
-    }
   }
 
   .menu-btn {

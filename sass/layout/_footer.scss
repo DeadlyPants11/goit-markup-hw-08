@@ -1,4 +1,3 @@
-
 @media screen and (max-width: 767px) {
   .page-footer {
     background: var(--color-main1-footer);
@@ -114,6 +113,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
   }
 
   .subscription-form__text {
@@ -135,7 +135,7 @@
   }
 
   .subscription-footer__input {
-    width: 450px;
+    width: 100%;
     height: 50px;
     padding-left: 16px;
     padding-top: 15px;
@@ -473,6 +473,13 @@
 
   .subscription-form {
     margin-left: auto;
+    display: block;
+  }
+
+  .page-addres__ul > li {
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .subscription-form__text {
